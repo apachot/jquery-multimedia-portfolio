@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>jQuery Multimedia Portfolio 2</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<link rel="shortcut icon" href="favicon.ico" />
+
+	
+		<link rel="stylesheet" href="css/jquery.fancybox-1.3.0.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/multimedia-portfolio.css" type="text/css" media="screen" /> 
+		
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.swfobject.1-0-9.min.js"></script>
+		<script type="text/javascript" src="../jquery.multimedia-portfolio-2.0.js"></script>
+		<script type="text/javascript" src="js/jquery.fancybox-1.3.0.pack.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#info2, #download, #info3').hide();
+			$('#button').bind('click',function(){
+				$("ul.multimedia-portfolio").multimedia_portfolio({width: parseInt($('#width').val()), baseDir: '.', nbelem: parseInt($('#nbelem').val())});
+				$('#info span').append('<strong>becomes an interactive multimedia portfolio !</strong>');
+				$('#info input, #info label').remove();
+				$('#info2, #download, #info3').fadeIn('slow');
+			});
+		});
+		</script>
+		<style type="text/css">
+		body{ background: white; color: #454545; font-family: Arial; }
+		a { color: #FF5D1F; text-decoration: none; }
+		a:hover { color: black; text-decoration: underline; }
+		h1 { color: #454545; text-align: center; }
+		p { text-align: center; margin-bottom: 1em; margin-top: 1em; }
+		#info input { margin: 2em 0; }
+		#info2 { font-style: italic; }		
+		</style>	
+	</head>
+	<body>				
+	
+		
+	<div class="page">
+			
+				<h1>jQuery Multimedia Portfolio 2 <small>(beta)</small></h1>
+
+				<p id="download">
+					<a href="http://www.openstudio.fr/jQuery-Multimedia-Portfolio-2.html?lang=en">download and online documentation</a> | <a href="http://twitter.com/_OpenStudio_">follow us on Twitter</a>
+				</p>
+
+				<p id="info">
+				  <span>...when a simple html list of various media links...</span><br />
+				  <label>width :</label> <input id="width" type="text" value="800" />
+				  <label for="nbelem">Elements : </label> <input size="3" name="nbelem" id="nbelem" value="3" type="text" /> <input id="button" type="submit" value="Start the demo !" /> 
+				</p>
+				
+				<center>
+				<ul class="multimedia-portfolio">					
+					<li>
+						<a href="documents/image1.jpg" title="Underneath a star &copy; Jeremy Villasis"><img src="thumbnails/image1.jpg" width="300" height="200" alt="" /></a>
+					</li>
+					<li>
+						<a href="http://www.youtube.com/watch?v=GMgTSIkxesc" title="Niaz diasamidze 33a">Niaz diasamidze 33a</a>
+					</li>
+					
+					<li>
+						<a href="http://radio-libre.fr/pulp/pulp_2007-10_changement_climatique_mplefebvre.mp3" title="Enquête sur le changement climatique - M-P Lefebvre &copy; P.U.L.P."><img src="thumbnails/pulp.jpg" width="270" height="204" alt="" /></a>
+					</li>
+					<li>
+						<a href="documents/image2.jpg" title="Ross Bay Cemetery: Fall colors &copy; Jeremy Villasis"><img src="thumbnails/image2.jpg" width="300" height="214" alt=""  /></a>
+					</li>
+					<li>
+						<a href="http://radio-libre.fr/casadart/file0009.flv" title="Michel B&eacute;rodot, Potier &copy; Casadart"><img src="thumbnails/potier2.jpg" width="259" height="176" alt="" /></a>
+					</li>
+					<li>
+						<a href="documents/image3.jpg" title="Water tower perspective &copy; Paulo Brandão"><img src="thumbnails/image3.jpg" width="200" height="200" alt="" /></a>
+					</li>
+					<li>
+						<a href="http://www.define-web.com/jquery_cheat_sheet/jquery_cheat_sheet_080306_v1.pdf" title="Aide m&eacute;moire jQuery">aide m&eacute;moire jQuery</a>
+					</li>
+					
+					<li>
+						<a href="http://www.youtube.com/watch?v=vJJxVXoilBY" title="Moitessier">Moitessier</a>
+					</li>
+					
+					<li>
+						<a href="documents/image4.jpg" title="The Vancouver Public Library HDR &copy; Brandon Godfrey"><img src="thumbnails/image4.jpg" width="300" height="214" alt="" /></a>
+					</li>
+					<li>
+						<a href="documents/image5.jpg" title="Holiness Dagchen Rinpoche's hand &copy; Wonderlane"><img src="thumbnails/image5.jpg" width="300" height="213" alt="" /></a>
+					</li>
+				</ul>
+				<br />
+				
+				<p id="info2">
+				  Non obstrusive and accessible portfolio supporting multiple media : photos, video (youtube and flv), audio (mp3), and pdf documents.<br />
+				  This plugin for jQuery will automatically detect the extension of each media and apply the adapted player.
+				</p>
+
+				<p id="info3">
+						  <a href="#" onclick="document.location.reload();return(false)">Play again !</a>
+				</p>
+			      <hr />
+			      <small>Development : <a href="http://www.openstudio.fr">OpenStudio</a> under GPL licence - Thanks to <a href="http://jqueryui.com/">the jquery UI team</a>, <a href="http://fancybox.net">fancybox developpers</a>, <a href="http://flv-player.net/players/maxi/">neolao.com</a>, <a href="http://jquery.thewikies.com/swfobject/">Jonathan Neal</a> and <a href="http://brandonaaron.net/code/mousewheel/demos">brandonaaron.net</a></small>
+				</center>
+
+	</div>
+
+
+
+						
+	</body>
+</html>
